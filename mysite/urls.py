@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from . import views
 from books import views as book_views
+from blog import views as blog_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
 	url(r'^search-form/$', book_views.search_form),
 	url(r'^search/$', book_views.search),
 	url(r'^contact/$', views.contact),
+	url(r'^$', blog_views.post_list, name = 'post_list')
 ]
